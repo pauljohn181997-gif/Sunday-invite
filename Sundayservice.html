@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunday Service Invitation</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      position: relative;
+      min-width: 300px;
+    }
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #999;
+    }
+    .close:hover {
+      color: #333;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    .yes {
+      background: #4CAF50;
+      color: white;
+    }
+    .no {
+      background: #e74c3c;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="content">
+    <span class="close" onclick="reset()">✖</span>
+    <h2>Will you attend our Sunday Service?</h2>
+    <button class="yes" onclick="showYes()">Yes</button>
+    <button class="no" onclick="showNo()">No</button>
+  </div>
+
+  <script>
+    function showYes() {
+      document.getElementById("content").innerHTML = `
+        <span class="close" onclick="reset()">✖</span>
+        <h2>See you and God bless 🙏</h2>
+      `;
+    }
+
+    function showNo() {
+      document.getElementById("content").innerHTML = `
+        <span class="close" onclick="reset()">✖</span>
+        <h2>We’ll miss you 😢</h2>
+      `;
+    }
+
+    function reset() {
+      document.getElementById("content").innerHTML = `
+        <span class="close" onclick="reset()">✖</span>
+        <h2>Will you attend our Sunday Service?</h2>
+        <button class="yes" onclick="showYes()">Yes</button>
+        <button class="no" onclick="showNo()">No</button>
+      `;
+    }
+  </script>
+
+</body>
+</html>
